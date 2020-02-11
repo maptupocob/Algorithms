@@ -17,10 +17,13 @@ public class Main {
 
         System.out.println("Init array state:");
         MyArrayUtil.displayArray(lilArr);
+        int deletingItem = 13;
         try {
-            MyArrayUtil.deleteItem(lilArr, 3);
+            MyArrayUtil.deleteItem(lilArr, deletingItem);
         } catch (ItemNotFoundException e) {
+            System.out.printf("Item %d was not found in array\n", deletingItem);
             e.printStackTrace();
+            System.exit(1);
         }
         System.out.println("After deleting element:");
         MyArrayUtil.displayArray(lilArr);
