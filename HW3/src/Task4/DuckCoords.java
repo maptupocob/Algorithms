@@ -24,6 +24,9 @@ public class DuckCoords implements Comparable<DuckCoords> {
 
     @Override
     public boolean equals(Object obj) {
+        if (!obj.getClass().equals(this.getClass())){
+            return false;
+        }
         int x1 = ((DuckCoords) obj).getX();
         int y1 = ((DuckCoords) obj).getY();
         return (x1 * y == x * y1) && (x * x1 >= 0);
