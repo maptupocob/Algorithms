@@ -1,4 +1,4 @@
-package DuckHunter;
+package Task4;
 
 public class DuckCoords implements Comparable<DuckCoords> {
     private final int x;

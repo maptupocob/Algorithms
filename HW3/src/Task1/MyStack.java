@@ -1,11 +1,11 @@
 package Task1;
 
-public class Stack {
+public class MyStack {
     private int capacity;
     private int[] stackArr;
     private int top;
 
-    public Stack(int capacity) {
+    public MyStack(int capacity) {
         this.capacity = capacity;
         stackArr = new int[capacity];
         top = -1;

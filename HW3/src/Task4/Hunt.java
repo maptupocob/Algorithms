@@ -1,4 +1,4 @@
-package DuckHunter;
+package Task4;
 
 
 import java.util.ArrayList;
