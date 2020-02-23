@@ -36,6 +36,11 @@ public class Main {
         printList(myQueue);
         System.out.println("Dequeue: " + myQueue.dequeue());
         printList(myQueue);
+
+
+        DoubleLinkedList<Integer> myDLL = new DoubleLinkedList<>();
+
+
     }
 
     public static void printList(SingleLinkedList<Integer> myList) {

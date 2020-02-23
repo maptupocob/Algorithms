@@ -1,5 +1,6 @@
+import java.util.Iterator;
 
-public class DoubleLinkedList<T> {
+public class DoubleLinkedList<T> implements Iterable<T> {
 
     private Node<T> pre;
     private Node<T> post;
@@ -16,20 +17,57 @@ public class DoubleLinkedList<T> {
         Node<T> newNode = new Node<>(value);
         newNode.next = post;
         newNode.prev = last;
+        last.next = newNode;
+        post.prev = newNode;
     }
 
     public void insertHead(T value) {
-        //TODO реализовать в качестве ДЗ
+        Node<T> newNode = new Node<>(value);
+        Node<T> first = pre.next;
+        newNode.next = first;
+        newNode.prev = pre;
+        first.prev = newNode;
+        pre.next = newNode;
     }
 
     public T deleteHead() {
-        //TODO реализовать в качестве ДЗ
-        return null;
+        Node<T> head = pre.next;
+        Node<T> newHead = head.next;
+        T value = head.value;
+        pre.next = newHead;
+        newHead.prev = pre;
+        return value;
     }
 
     public T deleteTail() {
-        //TODO реализовать в качестве ДЗ
-        return null;
+        Node<T> tail = post.prev;
+        Node<T> newTail = tail.prev;
+        T value = tail.value;
+        post.prev = newTail;
+        newTail.next = post;
+        return value;
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>() {
+            Node<T> current = pre.next;
+            @Override
+            public boolean hasNext() {
+                if ((current == null)||(current == post)){
+                    return false;
+                }else{
+                    return  true;
+                }
+            }
+
+            @Override
+            public T next() {
+                T value = current.value;
+                current = current.next;
+                return value;
+            }
+        };
     }
 
     //TODO реализовать итератор в качестве ДЗ
