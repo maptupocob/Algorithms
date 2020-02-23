@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        SingleLinkedList myList = new SingleLinkedList();
+        SingleLinkedList<Integer> myList = new SingleLinkedList<>();
         for (int i = 0; i < 5; i++) {
             myList.insertTail(i);
         }
@@ -11,7 +11,7 @@ public class Main {
         printList(myList);
         System.out.println();
 
-        SingleLinkedList myStack = new SingleLinkedList();
+        SingleLinkedList<Integer> myStack = new SingleLinkedList<>();
         myStack.push(10);
         myStack.push(20);
         myStack.push(30);
@@ -24,7 +24,7 @@ public class Main {
         printList(myStack);
         System.out.println();
 
-        SingleLinkedList myQueue = new SingleLinkedList();
+        SingleLinkedList<Integer> myQueue = new SingleLinkedList<>();
         myQueue.enqueue(100);
         myQueue.enqueue(200);
         myQueue.enqueue(300);
@@ -38,7 +38,7 @@ public class Main {
         printList(myQueue);
     }
 
-    public static void printList(SingleLinkedList myList) {
+    public static void printList(SingleLinkedList<Integer> myList) {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         for (Object o : myList) {
