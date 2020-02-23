@@ -1,9 +1,17 @@
-package DuckHunter;
+package Task4;
 
 public class DuckCoords implements Comparable<DuckCoords> {
     private final int x;
     private final int y;
     private float angle;
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 
     public DuckCoords(int x, int y) {
         this.x = x;
@@ -16,7 +24,12 @@ public class DuckCoords implements Comparable<DuckCoords> {
 
     @Override
     public boolean equals(Object obj) {
-        return Math.abs(this.angle - ((DuckCoords) obj).angle) < 1e-4;
+        if (!obj.getClass().equals(this.getClass())){
+            return false;
+        }
+        int x1 = ((DuckCoords) obj).getX();
+        int y1 = ((DuckCoords) obj).getY();
+        return (x1 * y == x * y1) && (x * x1 >= 0);
     }
 
     @Override
@@ -31,9 +44,9 @@ public class DuckCoords implements Comparable<DuckCoords> {
     @Override
     public int compareTo(DuckCoords o) {
         if (this.equals(o)) return 0;
-        else if(this.angle > o.getAngle()){
+        else if (this.angle > o.getAngle()) {
             return 1;
-        }else {
+        } else {
             return -1;
         }
     }

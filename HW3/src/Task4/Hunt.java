@@ -1,4 +1,4 @@
-package DuckHunter;
+package Task4;
 
 
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ public class Hunt {
         ArrayList<DuckCoords> ducks = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
-            int x = (int) ((int) (Math.random() * 20) * Math.pow(-1, (int) (Math.random() * 20)));
-            int y = (int) ((int) (Math.random() * 20) * Math.pow(-1, (int) (Math.random() * 20)));
+            int x = (int) ((int) (Math.random() * 20) - 10);
+            int y = (int) ((int) (Math.random() * 20) -10);
             ducks.add(i, new DuckCoords(x, y));
         }
 
