@@ -54,11 +54,7 @@ public class DoubleLinkedList<T> implements Iterable<T> {
             Node<T> current = pre.next;
             @Override
             public boolean hasNext() {
-                if ((current == null)||(current == post)){
-                    return false;
-                }else{
-                    return  true;
-                }
+                return (current != null) && (current != post);
             }
 
             @Override

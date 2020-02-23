@@ -49,6 +49,14 @@ public class Main {
         printList(myDLL);
         System.out.println("delete tail: " + myDLL.deleteTail());
         printList(myDLL);
+        System.out.println("delete head: " + myDLL.deleteHead());
+        printList(myDLL);
+        System.out.println("delete tail: " + myDLL.deleteTail());
+        printList(myDLL);
+        System.out.println("delete head: " + myDLL.deleteHead());
+        printList(myDLL);
+        System.out.println("delete tail: " + myDLL.deleteTail());
+        printList(myDLL);
 
 
     }
@@ -60,7 +68,9 @@ public class Main {
             sb.append(o);
             sb.append(", ");
         }
-        sb.delete(sb.length() - 2, sb.length());
+        if (sb.length() > 2) {
+            sb.delete(sb.length() - 2, sb.length());
+        }
         sb.append("]");
         System.out.println(sb);
     }
