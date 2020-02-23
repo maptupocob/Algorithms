@@ -70,8 +70,6 @@ public class DoubleLinkedList<T> implements Iterable<T> {
         };
     }
 
-    //TODO реализовать итератор в качестве ДЗ
-
     private static class Node<T> {
         T value;
         Node<T> prev;

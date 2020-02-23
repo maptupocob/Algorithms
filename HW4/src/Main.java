@@ -5,9 +5,9 @@ public class Main {
             myList.insertTail(i);
         }
         printList(myList);
-        System.out.println();
+        System.out.println("Deleted value:");
         System.out.println(myList.deleteAt(2));
-        System.out.println();
+        System.out.println("List after delete:");
         printList(myList);
         System.out.println();
 
@@ -15,9 +15,8 @@ public class Main {
         myStack.push(10);
         myStack.push(20);
         myStack.push(30);
-        System.out.println("Peek: " + myStack.peek());
-        System.out.println();
         printList(myStack);
+        System.out.println("Peek: " + myStack.peek());
         System.out.println("Pop: " + myStack.pop());
         printList(myStack);
         System.out.println("Pop: " + myStack.pop());
@@ -36,17 +35,28 @@ public class Main {
         printList(myQueue);
         System.out.println("Dequeue: " + myQueue.dequeue());
         printList(myQueue);
-
+        System.out.println();
 
         DoubleLinkedList<Integer> myDLL = new DoubleLinkedList<>();
+        myDLL.insertHead(1000);
+        myDLL.insertHead(2000);
+        myDLL.insertHead(3000);
+        myDLL.insertTail(4000);
+        myDLL.insertTail(5000);
+        myDLL.insertTail(6000);
+        printList(myDLL);
+        System.out.println("delete head: " + myDLL.deleteHead());
+        printList(myDLL);
+        System.out.println("delete tail: " + myDLL.deleteTail());
+        printList(myDLL);
 
 
     }
 
-    public static void printList(SingleLinkedList<Integer> myList) {
+    public static <T> void printList(Iterable<T> myList) {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        for (Object o : myList) {
+        for (T o : myList) {
             sb.append(o);
             sb.append(", ");
         }
