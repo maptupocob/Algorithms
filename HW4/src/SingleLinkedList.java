@@ -42,7 +42,7 @@ public class SingleLinkedList<T> implements Iterable<T> {
         T deletedValue = tail.value;
         Node<T> prev = findPrev(tail);
         tail = prev;
-        if ( tail == null) {
+        if (tail == null) {
             head = null;
         } else {
             prev.next = null;
@@ -75,39 +75,48 @@ public class SingleLinkedList<T> implements Iterable<T> {
     }
 
     public T deleteAt(int index) {
-        //TODO реализовать в качестве ДЗ
-        return null;
+        T temp;
+        if (index == 0) {
+            temp = head.value;
+            head = head.next;
+        } else {
+            Node<T> curr = head;
+            while (index > 0) {
+                curr = curr.next;
+                index--;
+            }
+            temp = curr.value;
+            findPrev(curr).next = curr.next;
+        }
+        return temp;
     }
 
     private Node<T> findPrev(Node<T> node) {
-        Node<T> prev = head;
-        while (prev != null && prev.next != node) {
-            prev = prev.next;
+        Node<T> curr = head;
+        while (curr != null && curr.next != node) {
+            curr = curr.next;
         }
-        return prev;
+        return curr;
     }
 
     public void push(T value) {
-        //TODO реализовать в качестве ДЗ
+        insertHead(value);
     }
 
     public T pop() {
-        //TODO реализовать в качестве ДЗ
-        return null;
+        return deleteHead();
     }
 
     public T peek() {
-        //TODO реализовать в качестве ДЗ
-        return null;
+        return head.value;
     }
 
     public void enqueue(T value) {
-        //TODO реализовать в качестве ДЗ
+        insertTail(value);
     }
 
     public T dequeue() {
-        //TODO реализовать в качестве ДЗ
-        return null;
+        return deleteHead();
     }
 
     @Override
