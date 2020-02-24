@@ -1,4 +1,4 @@
-package ru.geekbrains.recursion;
+package Task2;
 
 public class Backpack {
 
@@ -17,9 +17,9 @@ public class Backpack {
         if (weight[itemNum] > w) {
             return recursive(weight, val, w,itemNum + 1);
         }
-        // TODO вычислить ценность для случаев, когда мы берем и не берем в рюкзак предмет
-        // TODO вернуть ценность для случая с наибольшей ценностью
-        return -1;
+        int ifTaken = val[itemNum]  + recursive(weight, val, w - weight[itemNum], itemNum + 1);
+        int ifNotTaken = recursive(weight, val, w,itemNum + 1);
+        return Math.max(ifTaken, ifNotTaken);
     }
 
     public static void main(String[] args) {
