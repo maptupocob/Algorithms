@@ -1,4 +1,4 @@
-package ru.geekbrains.recursion;
+package Task3;
 
 import java.util.Arrays;
 import java.util.List;
